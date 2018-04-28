@@ -42,8 +42,6 @@ Panic over! Plant has water again :)
 # This is our sendEmail function
 
 def sendEmail(smtp_message):
-	print("----------------------")
-	print("msg is : ", smtp_message)
 	try:
 		smtpObj = smtplib.SMTP(smtp_host, smtp_port)
 		smtpObj.login(smtp_username, smtp_password) # If you don't need to login to your smtp provider, simply remove this line
@@ -55,8 +53,6 @@ def sendEmail(smtp_message):
 # This is our callback function, this function will be called every time there is a change on the specified GPIO channel, in this example we are using 17
 
 def callback(channel):
-	print("----------------------")
-	print("channel is ", channel)
 	if GPIO.input(channel):
 		print ("LED off")
 		sendEmail(message_dead)
