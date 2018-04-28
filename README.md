@@ -6,7 +6,7 @@ sudo pip install flask
 
 pip install flask-restful
 
-
+ssh pi@webpi.local
 
 
 git clone git://github.com/geminigrass/Moisture-Sensor
