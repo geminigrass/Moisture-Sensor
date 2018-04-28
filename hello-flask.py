@@ -39,3 +39,6 @@ GPIO.add_event_callback(channel, callback)
 
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0')
+    while True:
+        # This line simply tells our script to wait 0.1 of a second, this is so the script doesnt hog all of the CPU
+        time.sleep(0.1)
