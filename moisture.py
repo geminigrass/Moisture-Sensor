@@ -8,57 +8,14 @@ import time # This is the time library, we need this so we can use the sleep fun
 
 # Define some variables to be used later on in our script
 
-# You might not need the username and password variable, depends if you are using a provider or if you have your raspberry pi setup to send emails
-# If you have setup your raspberry pi to send emails, then you will probably want to use 'localhost' for your smtp_host
-
-smtp_username = "enter_username_here" # This is the username used to login to your SMTP provider
-smtp_password = "enter_password_here" # This is the password used to login to your SMTP provider
-smtp_host = "enter_host_here" # This is the host of the SMTP provider
-smtp_port = 25 # This is the port that your SMTP provider uses
-
-smtp_sender = "sender@email.com" # This is the FROM email address
-smtp_receivers = ['receiver@email.com'] # This is the TO email address
-
-# The next two variables use triple quotes, these allow us to preserve the line breaks in the string.
-
-# This is the message that will be sent when NO moisture is detected
-
-message_dead = """From: Sender Name <sender@email.com>
-To: Receiver Name <receiver@email.com>
-Subject: Moisture Sensor Notification
-
-Warning, no moisture detected! Plant death imminent!!! :'(
-"""
-
-# This is the message that will be sent when moisture IS detected again
-
-message_alive = """From: Sender Name <sender@email.com>
-To: Receiver Name <receiver@email.com>
-Subject: Moisture Sensor Notification
-
-Panic over! Plant has water again :)
-"""
-
-# This is our sendEmail function
-
-def sendEmail(smtp_message):
-	try:
-		smtpObj = smtplib.SMTP(smtp_host, smtp_port)
-		smtpObj.login(smtp_username, smtp_password) # If you don't need to login to your smtp provider, simply remove this line
-		smtpObj.sendmail(smtp_sender, smtp_receivers, smtp_message)
-		print "Successfully sent email"
-	except smtplib.SMTPException:
-		print "Error: unable to send email"
 
 # This is our callback function, this function will be called every time there is a change on the specified GPIO channel, in this example we are using 17
 
 def callback(channel):
 	if GPIO.input(channel):
 		print "LED off"
-		sendEmail(message_dead)
 	else:
 		print "LED on"
-		sendEmail(message_alive)
 
 # Set our GPIO numbering to BCM
 GPIO.setmode(GPIO.BCM)
