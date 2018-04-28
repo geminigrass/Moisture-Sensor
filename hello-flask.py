@@ -9,10 +9,10 @@ app = Flask(__name__)
 
 LED_status = "not start yet"
 def callback(channel):
+    global LED_status
 	if GPIO.input(channel):
-		print ("LED off")
         LED_status = "wet"
-
+		print ("LED off")
 	else:
 		print ("LED on")
         LED_status = "dry"
