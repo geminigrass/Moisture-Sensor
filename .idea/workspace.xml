@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7e179d3-c449-400a-92b7-b68ea959e0d5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/moisture.py" beforeDir="false" afterPath="$PROJECT_DIR$/moisture.py" afterDir="false" />
-    </list>
+    <list default="true" id="f7e179d3-c449-400a-92b7-b68ea959e0d5" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +17,8 @@
       <file leaf-file-name="moisture.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/moisture.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="158">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="e#70#169#0" expanded="true" />
               </folding>
@@ -102,6 +100,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -341,7 +340,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="738" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -399,8 +397,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/moisture.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="158">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="e#70#169#0" expanded="true" />
           </folding>

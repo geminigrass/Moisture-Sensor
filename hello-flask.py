@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import RPi.GPIO as GPIO # This is the GPIO library we need to use the GPIO pins on the Raspberry Pi
 import smtplib # This is the SMTP library we need to send the email notification
 import time # This is the time library, we need this so we can use the sleep function
@@ -17,11 +17,7 @@ def callback(channel):
 
 @app.route('/')
 def index():
-    while True:
-        # This line simply tells our script to wait 0.1 of a second, this is so the script doesnt hog all of the CPU
-        time.sleep(0.1)
-        print("hello")
-    return 'Hello world'
+    return render_template('index.html')
 
 
 GPIO.setmode(GPIO.BCM)
