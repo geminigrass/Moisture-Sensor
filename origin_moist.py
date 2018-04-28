@@ -26,7 +26,6 @@ smtp_receivers = ['receiver@email.com'] # This is the TO email address
 message_dead = """From: Sender Name <sender@email.com>
 To: Receiver Name <receiver@email.com>
 Subject: Moisture Sensor Notification
-
 Warning, no moisture detected! Plant death imminent!!! :'(
 """
 
@@ -35,21 +34,23 @@ Warning, no moisture detected! Plant death imminent!!! :'(
 message_alive = """From: Sender Name <sender@email.com>
 To: Receiver Name <receiver@email.com>
 Subject: Moisture Sensor Notification
-
 Panic over! Plant has water again :)
 """
 
 # This is our sendEmail function
 
-
+def sendEmail(smtp_message):
+		print "Successfully sent email"
 
 # This is our callback function, this function will be called every time there is a change on the specified GPIO channel, in this example we are using 17
 
 def callback(channel):
 	if GPIO.input(channel):
-		print ("LED off")
+		print "LED off"
+		sendEmail(message_dead)
 	else:
-		print ("LED on")
+		print "LED on"
+		sendEmail(message_alive)
 
 # Set our GPIO numbering to BCM
 GPIO.setmode(GPIO.BCM)
