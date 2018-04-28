@@ -7,17 +7,20 @@ app = Flask(__name__)
 
 # This is our callback function, this function will be called every time there is a change on the specified GPIO channel, in this example we are using 17
 
+LED_status = "not start yet"
 def callback(channel):
 	if GPIO.input(channel):
 		print ("LED off")
+        LED_status = "wet"
 
 	else:
 		print ("LED on")
+        LED_status = "dry"
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html',led_status=LED_status)
 
 
 GPIO.setmode(GPIO.BCM)
@@ -31,6 +34,10 @@ GPIO.setup(channel, GPIO.IN)
 GPIO.add_event_detect(channel, GPIO.BOTH, bouncetime=300)
 # This line asigns a function to the GPIO pin so that when the above line tells us there is a change on the pin, run this function
 GPIO.add_event_callback(channel, callback)
+
+while True:
+	# This line simply tells our script to wait 0.1 of a second, this is so the script doesnt hog all of the CPU
+	time.sleep(0.1)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
