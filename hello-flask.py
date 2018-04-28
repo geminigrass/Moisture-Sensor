@@ -9,18 +9,18 @@ app = Flask(__name__)
 
 LED_status = "not start yet"
 def callback(channel):
-    global LED_status
+	global LED_status
 	if GPIO.input(channel):
-        LED_status = "wet"
+		LED_status = "wet"
 		print ("LED off")
 	else:
 		print ("LED on")
-        LED_status = "dry"
+		LED_status = "dry"
 
 
 @app.route('/')
 def index():
-    return render_template('index.html',led_status=LED_status)
+	return render_template('index.html',led_status=LED_status)
 
 
 GPIO.setmode(GPIO.BCM)
@@ -40,4 +40,4 @@ while True:
 	time.sleep(0.1)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+	app.run(debug=True, host='0.0.0.0')
